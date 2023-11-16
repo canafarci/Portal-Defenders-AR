@@ -6,7 +6,10 @@
         "UnityEditor.TestRunner",
         "Zenject-TestFramework",
         "PortalDefendersAR.GameStates",
-        "Zenject"
+        "Zenject",
+        "Unity.XR.ARFoundation",
+        "PortalDefendersAR.CoreStructures",
+        "PortalDefendersAR.Installers"
     ],
     "includePlatforms": [
         "Editor"

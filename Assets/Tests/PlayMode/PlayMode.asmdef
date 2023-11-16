@@ -1,6 +1,6 @@
 {
     "name": "PlayMode",
-    "rootNamespace": "PortalDefendersAR.Tests.EditMode",
+    "rootNamespace": "PortalDefendersAR.Tests.PlayMode",
     "references": [
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner"
