@@ -4,16 +4,35 @@ using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
-namespace PortalDefendersAR.GameState
+namespace PortalDefendersAR.GameStates
 {
     public class GameStateMachine : IInitializable, ITickable
     {
         private Dictionary<GameState, IGameState> _stateLookup = new();
         private IGameState _currentState;
 
+        private GameStateMachine([Inject(Id = GameState.PlacingObject)] IGameState placingObjectState,
+                                 [Inject(Id = GameState.Playing)] IGameState playingState)
+        {
+            _currentState = placingObjectState;
+            _stateLookup[GameState.PlacingObject] = placingObjectState;
+            _stateLookup[GameState.Playing] = playingState;
+        }
+
         public void Initialize()
         {
             _currentState.Enter();
+        }
+
+        public void Tick()
+        {
+            GameState nextState = _currentState.Tick();
+
+            //tick function returns a enum for the next state when state has decided to exit
+            if (nextState != GameState.StayInState)
+            {
+                ChangeState(nextState);
+            }
         }
 
         private void ChangeState(GameState state)
@@ -29,18 +48,7 @@ namespace PortalDefendersAR.GameState
             }
         }
 
-        public void Tick()
-        {
-            GameState nextState = _currentState.Tick();
-
-            //tick function returns a pointer to the next state when state has decided to exit
-            if (nextState != GameState.StayInState)
-            {
-                ChangeState(nextState);
-            }
-        }
-
-        protected void TransitionToNextState(IGameState nextState)
+        private void TransitionToNextState(IGameState nextState)
         {
             _currentState.Exit();
             _currentState = nextState;

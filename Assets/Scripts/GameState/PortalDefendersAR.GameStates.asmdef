@@ -1,6 +1,6 @@
 {
-    "name": "PortalDefendersAR.GameState",
-    "rootNamespace": "PortalDefendersAR.GameState",
+    "name": "PortalDefendersAR.GameStates",
+    "rootNamespace": "PortalDefendersAR.GameStates",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
