@@ -1,29 +1,28 @@
-using System.Collections;
-using System.Collections.Generic;
+using PortalDefendersAR.ARModules;
 using PortalDefendersAR.CoreStructures;
+using PortalDefendersAR.GameInput;
 using UnityEngine;
-using UnityEngine.XR.ARFoundation;
-using UnityEngine.XR.ARSubsystems;
+using Zenject;
 
 namespace PortalDefendersAR.GameStates
 {
     public class PlacingObjectState : IGameState
     {
-        private ARPlaneManager _arPlaneManager; //TODO toggle visibility of the planes when placement finishes
-        private ARRaycastManager _arRaycastManager;
         private Portal.Factory _portalFactory;
         private Fortress.Factory _fortressFactory;
         private PlacingObjectStates _currentState;
+        private IPoseRaycaster _poseRaycaster;
+        private ITouchInputChecker _touchInputChecker;
 
-        private PlacingObjectState(ARPlaneManager arPlaneManager,
-                                   ARRaycastManager arRaycastManager,
-                                   Portal.Factory portalFactory,
-                                   Fortress.Factory fortressFactory)
+        private PlacingObjectState(Portal.Factory portalFactory,
+                                   Fortress.Factory fortressFactory,
+                                   IPoseRaycaster raycaster,
+                                   ITouchInputChecker inputChecker)
         {
-            _arPlaneManager = arPlaneManager;
-            _arRaycastManager = arRaycastManager;
             _portalFactory = portalFactory;
             _fortressFactory = fortressFactory;
+            _poseRaycaster = raycaster;
+            _touchInputChecker = inputChecker;
         }
 
         public void Enter()
@@ -38,76 +37,50 @@ namespace PortalDefendersAR.GameStates
 
         public GameState Tick()
         {
-            GameState nextState = GameState.StayInState;
-
-            if (TryRaycastValidPose(out Pose pose))
+            switch (_currentState)
             {
-                switch (_currentState)
-                {
-                    case PlacingObjectStates.PlacingPortal:
-                        _portalFactory.Create(pose);
-                        _currentState = PlacingObjectStates.PlacingFortress;
-                        break;
-
-                    case PlacingObjectStates.PlacingFortress:
-                        _fortressFactory.Create(pose);
-                        _currentState = PlacingObjectStates.Finished;
-                        break;
-
-                    case PlacingObjectStates.Finished: //TODO show UI to continue
-                        nextState = GameState.Playing; //Signal game state machine to move to the next state
-                        break;
-                }
+                case PlacingObjectStates.PlacingPortal:
+                case PlacingObjectStates.PlacingFortress:
+                    return HandlePlacingObject();
+                case PlacingObjectStates.Finished:
+                    //TODO: Show UI to continue
+                    return GameState.Playing;
+                default:
+                    return GameState.StayInState;
             }
-
-            return nextState;
         }
 
-        private bool TryRaycastValidPose(out Pose pose)
+        private GameState HandlePlacingObject()
         {
-            bool raycastSuccessful = false;
-
-            if (CheckTouchedScreen(out Touch touch))
+            if (!_touchInputChecker.CheckTouchedScreen(out Touch touch))
             {
-                List<ARRaycastHit> hits = new();
-                if (_arRaycastManager.Raycast(touch.position, hits, TrackableType.PlaneWithinPolygon))
-                {
-                    pose = hits[0].pose;
-                    raycastSuccessful = true;
-                }
-                else
-                {
-                    pose = default;
-                }
-            }
-            else
-            {
-                pose = default;
+                return GameState.StayInState;
             }
 
-            return raycastSuccessful;
+            if (_poseRaycaster.TryRaycastValidPose(touch.position, out Pose pose))
+            {
+                CreateObjectBasedOnCurrentState(pose);
+            }
+
+            return GameState.StayInState;
         }
 
-        private bool CheckTouchedScreen(out Touch touch)
+        private void CreateObjectBasedOnCurrentState(Pose pose)
         {
-            bool hasTouched = false;
-
-            if (Input.touchCount > 0)
+            switch (_currentState)
             {
-                touch = Input.GetTouch(0);
-
-                if (touch.phase == TouchPhase.Began) //return true only if touch is in beginning phase
-                {
-                    hasTouched = true;
-                }
+                case PlacingObjectStates.PlacingPortal:
+                    _portalFactory.Create(pose);
+                    _currentState = PlacingObjectStates.PlacingFortress;
+                    break;
+                case PlacingObjectStates.PlacingFortress:
+                    _fortressFactory.Create(pose);
+                    _currentState = PlacingObjectStates.Finished;
+                    break;
             }
-            else
-            {
-                touch = default;
-            }
-
-            return hasTouched;
         }
+
+
     }
 
     public enum PlacingObjectStates

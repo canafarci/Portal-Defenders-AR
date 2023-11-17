@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<coverage version="1.0" date="2023-11-17_16-01-59" tag="">
+  <assembly name="PortalDefendersAR.CoreStructures">
+    <class name="PortalDefendersAR.CoreStructures.Fortress" coveredlines="6" coverablelines="6" totallines="22" coveredbranches="0" totalbranches="0" />
+    <class name="PortalDefendersAR.CoreStructures.Portal" coveredlines="6" coverablelines="6" totallines="22" coveredbranches="0" totalbranches="0" />
+  </assembly>
+  <assembly name="PortalDefendersAR.GameStates">
+    <class name="PortalDefendersAR.GameStates.GameStateMachine" coveredlines="29" coverablelines="31" totallines="76" coveredbranches="0" totalbranches="0" />
+    <class name="PortalDefendersAR.GameStates.PlacingObjectState" coveredlines="34" coverablelines="38" totallines="92" coveredbranches="0" totalbranches="0" />
+    <class name="PortalDefendersAR.GameStates.PlayingState" coveredlines="0" coverablelines="6" totallines="25" coveredbranches="0" totalbranches="0" />
+  </assembly>
+</coverage>

@@ -3,6 +3,8 @@ using PortalDefendersAR.GameStates;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine;
 using Zenject;
+using PortalDefendersAR.ARModules;
+using PortalDefendersAR.GameInput;
 
 
 namespace PortalDefendersAR.Installers
@@ -33,6 +35,14 @@ namespace PortalDefendersAR.Installers
             Container.BindFactory<Pose, Fortress, Fortress.Factory>()
                      .FromSubContainerResolve()
                      .ByNewPrefabInstaller<FortressInstaller>(_fortressPrefab);
+
+            Container.Bind<IPoseRaycaster>()
+                .To<WorldPoseRaycaster>()
+                .AsSingle();
+
+            Container.Bind<ITouchInputChecker>()
+                .To<TouchInputChecker>()
+                .AsSingle();
 
             Container.Bind<ARPlaneManager>()
                 .FromComponentInHierarchy()

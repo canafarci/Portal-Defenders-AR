@@ -3,14 +3,23 @@
     "rootNamespace": "PortalDefendersAR.Tests.PlayMode",
     "references": [
         "UnityEngine.TestRunner",
-        "UnityEditor.TestRunner"
+        "UnityEditor.TestRunner",
+        "Zenject",
+        "Zenject-TestFramework",
+        "PortalDefendersAR.ARModules",
+        "PortalDefendersAR.CoreStructures",
+        "PortalDefendersAR.Input",
+        "PortalDefendersAR.GameStates",
+        "PortalDefendersAR.Installers"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": true,
     "precompiledReferences": [
-        "nunit.framework.dll"
+        "nunit.framework.dll",
+        "Moq.dll",
+        "Zenject-usage.dll"
     ],
     "autoReferenced": false,
     "defineConstraints": [

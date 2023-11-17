@@ -9,7 +9,9 @@
         "Zenject",
         "Unity.XR.ARFoundation",
         "PortalDefendersAR.CoreStructures",
-        "PortalDefendersAR.Installers"
+        "PortalDefendersAR.Installers",
+        "PortalDefendersAR.ARModules",
+        "PortalDefendersAR.Input"
     ],
     "includePlatforms": [
         "Editor"

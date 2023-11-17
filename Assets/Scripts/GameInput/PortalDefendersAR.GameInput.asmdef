@@ -1,0 +1,14 @@
+{
+    "name": "PortalDefendersAR.Input",
+    "rootNamespace": "PortalDefendersAR.Input",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
