@@ -249,6 +249,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _portalPrefab: {fileID: 5840436830406803322, guid: 25de347f5e00590488c0c9f43efe17cf, type: 3}
   _fortressPrefab: {fileID: 5840436830406803322, guid: 2d6186f7c3e4d074bb9349f0a2bf5e1c, type: 3}
+  _bombPrefab: {fileID: 6047238869815279851, guid: 5f1faf5960d0a6e4482da39724ebfcef, type: 3}
+  _bombParent: {fileID: 4900298331102580664}
 --- !u!114 &2016867642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -348,11 +350,24 @@ PrefabInstance:
       propertyPath: m_Name
       value: AR_System_Objects
       objectReference: {fileID: 0}
+    - target: {fileID: 7439423304122619521, guid: 75ee17d50c27a88479a2dbbfe16228f8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.3251
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439423304122619521, guid: 75ee17d50c27a88479a2dbbfe16228f8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75ee17d50c27a88479a2dbbfe16228f8, type: 3}
+--- !u!4 &4900298331102580664 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7439423304122619521, guid: 75ee17d50c27a88479a2dbbfe16228f8, type: 3}
+  m_PrefabInstance: {fileID: 4900298331102580663}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

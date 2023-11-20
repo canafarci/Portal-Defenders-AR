@@ -1,5 +1,5 @@
 using PortalDefendersAR.ARModules;
-using PortalDefendersAR.CoreStructures;
+using PortalDefendersAR.Creation;
 using PortalDefendersAR.GameInput;
 using UnityEngine;
 using Zenject;
@@ -52,7 +52,7 @@ namespace PortalDefendersAR.GameStates
 
         private GameState HandlePlacingObject()
         {
-            if (!_touchInputChecker.CheckTouchedScreen(out Touch touch))
+            if (!_touchInputChecker.CheckScreenTouch(out Touch touch))
             {
                 return GameState.StayInState;
             }

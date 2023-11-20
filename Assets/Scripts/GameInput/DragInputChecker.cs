@@ -4,13 +4,13 @@ using UnityEngine;
 
 namespace PortalDefendersAR.GameInput
 {
-    public class TouchInputChecker : ITouchInputChecker
+    public class DragInputChecker : ITouchInputChecker
     {
         public bool CheckScreenTouch(out Touch touch)
         {
             touch = default;
 
-            if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+            if (Input.touchCount > 0)
             {
                 touch = Input.GetTouch(0);
                 return true;
@@ -18,10 +18,5 @@ namespace PortalDefendersAR.GameInput
 
             return false;
         }
-    }
-
-    public interface ITouchInputChecker
-    {
-        public bool CheckScreenTouch(out Touch touch);
     }
 }

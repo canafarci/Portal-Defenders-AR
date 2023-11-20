@@ -7,10 +7,10 @@
         "Zenject",
         "Zenject-TestFramework",
         "PortalDefendersAR.ARModules",
-        "PortalDefendersAR.CoreStructures",
         "PortalDefendersAR.Input",
         "PortalDefendersAR.GameStates",
-        "PortalDefendersAR.Installers"
+        "PortalDefendersAR.Installers",
+        "PortalDefendersAR.Creation"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

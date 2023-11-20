@@ -4,7 +4,7 @@ using System.Reflection;
 using Moq;
 using NUnit.Framework;
 using PortalDefendersAR.ARModules;
-using PortalDefendersAR.CoreStructures;
+using PortalDefendersAR.Creation;
 using PortalDefendersAR.GameInput;
 using PortalDefendersAR.GameStates;
 using PortalDefendersAR.Installers;
@@ -63,7 +63,7 @@ namespace PortalDefendersAR.Tests.EditMode
             var initialState = GetPrivateState(_placingObjectState);
 
             var sampleTouch = new Touch();
-            _mockInputChecker.Setup(x => x.CheckTouchedScreen(out sampleTouch))
+            _mockInputChecker.Setup(x => x.CheckScreenTouch(out sampleTouch))
                               .Returns(false).Callback<Touch>((t) => t = sampleTouch);
 
             // Act
@@ -82,7 +82,7 @@ namespace PortalDefendersAR.Tests.EditMode
             var initialState = GetPrivateState(_placingObjectState);
 
             var sampleTouch = new Touch();
-            _mockInputChecker.Setup(x => x.CheckTouchedScreen(out sampleTouch))
+            _mockInputChecker.Setup(x => x.CheckScreenTouch(out sampleTouch))
                               .Returns(true).Callback<Touch>((t) => t = sampleTouch);
 
             var samplePose = new Pose();
@@ -105,7 +105,7 @@ namespace PortalDefendersAR.Tests.EditMode
             _placingObjectState.Enter();
 
             var sampleTouch = new Touch();
-            _mockInputChecker.Setup(x => x.CheckTouchedScreen(out sampleTouch))
+            _mockInputChecker.Setup(x => x.CheckScreenTouch(out sampleTouch))
                               .Returns(false).Callback<Touch>((t) => t = sampleTouch);
 
             // Act

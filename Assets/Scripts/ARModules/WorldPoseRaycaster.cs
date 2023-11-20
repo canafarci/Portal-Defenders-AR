@@ -32,7 +32,6 @@ namespace PortalDefendersAR.ARModules
 
             return raycastSuccessful;
         }
-
     }
 
     public interface IPoseRaycaster

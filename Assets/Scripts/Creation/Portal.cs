@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
-namespace PortalDefendersAR.CoreStructures
+namespace PortalDefendersAR.Creation
 {
-    public class Fortress
+    public class Portal
     {
         public Transform Transform { get; private set; }
 
-        private Fortress(Pose pose, Transform transform)
+        private Portal(Pose pose, Transform transform)
         {
             Transform = transform;
             Transform.SetPositionAndRotation(pose.position, pose.rotation);
         }
 
-        public class Factory : PlaceholderFactory<Pose, Fortress>
+        public class Factory : PlaceholderFactory<Pose, Portal>
         {
         }
     }
