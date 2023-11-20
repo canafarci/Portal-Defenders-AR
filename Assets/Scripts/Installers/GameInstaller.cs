@@ -47,7 +47,7 @@ namespace PortalDefendersAR.Installers
                      .FromSubContainerResolve()
                      .ByNewPrefabInstaller<BombInstaller>(_bombPrefab);
 
-            Container.Bind<BombThrower>().AsSingle();
+            Container.BindInterfacesAndSelfTo<BombThrower>().AsSingle();
             Container.Bind<TimeTracker>().AsSingle();
 
             BindInputs();

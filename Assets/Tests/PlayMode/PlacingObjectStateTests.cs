@@ -33,19 +33,16 @@ namespace PortalDefendersAR.Tests.PlayMode
             GameObject _portalPrefab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Portal.prefab");
             GameObject _fortressPrefab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Fortress.prefab");
 
-            var fac = new Mock<Portal.Factory>();
-            fac.Setup(x => x.Create(It.IsAny<Pose>()));
-
             PreInstall();
 
             // Bind the mock to the container
             Container.BindFactory<Pose, Portal, Portal.Factory>()
                 .FromSubContainerResolve()
-                .ByNewPrefabInstaller<PortalInstaller>(new GameObject("go"));
+                .ByNewPrefabInstaller<PortalInstaller>(_portalPrefab);
 
             Container.BindFactory<Pose, Fortress, Fortress.Factory>()
                 .FromSubContainerResolve()
-                .ByNewPrefabInstaller<FortressInstaller>(new GameObject("go"));
+                .ByNewPrefabInstaller<FortressInstaller>(_fortressPrefab);
 
             Container.Bind<IPoseRaycaster>().FromInstance(_mockPoseRaycaster.Object).AsSingle();
             Container.Bind<ITouchInputChecker>().FromInstance(_mockInputChecker.Object).AsSingle();
@@ -62,7 +59,7 @@ namespace PortalDefendersAR.Tests.PlayMode
         {
             CommonInstall();
 
-            // Wait one frame to allow update logic for SpaceShip to run
+            // Wait one frame to allow update logic 
             yield return null;
 
             // Arrange

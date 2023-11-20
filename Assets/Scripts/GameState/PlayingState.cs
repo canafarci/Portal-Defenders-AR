@@ -18,10 +18,11 @@ namespace PortalDefendersAR.GameStates
         private IPoseRaycaster _dragPlaneRaycaster;
         private BombThrower _bombThrower;
         private Bomb.Factory _bombFactory;
+
         private Bomb _currentBomb;
         private PlayingStates _currentPlayingState;
 
-        private PlayingState([Inject(Id = InputCheckers.TouchChecker)] ITouchInputChecker touchChecker,
+        public PlayingState([Inject(Id = InputCheckers.TouchChecker)] ITouchInputChecker touchChecker,
                             [Inject(Id = InputCheckers.DragChecker)] ITouchInputChecker dragChecker,
                             TimeTracker timeTracker,
                             [Inject(Id = Raycasters.BombRaycaster)] IPoseRaycaster bombRaycaster,
@@ -40,74 +41,102 @@ namespace PortalDefendersAR.GameStates
 
         public void Enter()
         {
-            //enable ui
-            //spawn a ball from factory
-            //signal portal to start spawning
+            EnableUI();
             _currentBomb = _bombFactory.Create();
         }
 
         public void Exit()
         {
-            //disble ui
-            //destroy ball
+            DisableUI();
+            DestroyBomb();
         }
 
         public GameStates.GameState Tick()
         {
             GameState nextGameState = CheckTransition();
 
-            if (_currentPlayingState == PlayingStates.Idle)
+            switch (_currentPlayingState)
             {
-                if (_touchInputChecker.CheckScreenTouch(out Touch touch))
-                {
-                    if (_bombRaycaster.TryRaycastValidPose(touch.position, out Pose pose))
-                    {
-                        _currentPlayingState = PlayingStates.DraggingBomb;
-                    }
-                }
+                case PlayingStates.Idle:
+                    HandleIdleState();
+                    break;
+
+                case PlayingStates.DraggingBomb:
+                    HandleDraggingBombState();
+                    break;
             }
-            else if (_currentPlayingState == PlayingStates.DraggingBomb)
-            {
-                if (_draggingInputChecker.CheckScreenTouch(out Touch touch))
-                {
-                    if (_dragPlaneRaycaster.TryRaycastValidPose(touch.position, out Pose pose))
-                    {
-                        _bombThrower.DragBomb(_currentBomb, pose);
-                    }
-                }
-                else
-                {
-                    _bombThrower.Throw(_currentBomb);
-                    _currentBomb = _bombFactory.Create();
-                    _currentPlayingState = PlayingStates.Idle;
-                }
-            }
-
-
-            //tick timer
-
-            //listen for raycasts to ball
-            //on drag, move ball in the plane
-            //on release, throw the ball
-            //create new ball on the screen
 
             return nextGameState;
         }
 
+        private void HandleIdleState()
+        {
+            if (_touchInputChecker.CheckScreenTouch(out Touch touch))
+            {
+                if (_bombRaycaster.TryRaycastValidPose(touch.position, out Pose pose))
+                {
+                    _currentPlayingState = PlayingStates.DraggingBomb;
+                }
+            }
+        }
+
+        private void HandleDraggingBombState()
+        {
+            if (_draggingInputChecker.CheckScreenTouch(out Touch touch))
+            {
+                if (_dragPlaneRaycaster.TryRaycastValidPose(touch.position, out Pose pose))
+                {
+                    PrepareBombForDragging();
+                    _bombThrower.DragBomb(pose);
+                }
+            }
+            else //stopped dragging
+            {
+                _bombThrower.Throw();
+                ResetBombAndState();
+            }
+        }
+
+        private void PrepareBombForDragging()
+        {
+            if (!_bombThrower.HasBomb())
+            {
+                _bombThrower.SetBomb(_currentBomb);
+            }
+        }
+
+        private void ResetBombAndState()
+        {
+            _bombThrower.ClearBomb();
+            _currentBomb = _bombFactory.Create();
+            _currentPlayingState = PlayingStates.Idle;
+        }
+
         private GameState CheckTransition()
         {
-            GameState nextGameState;
-
             if (_timeTracker.CheckTimeOver(Time.deltaTime))
             {
-                nextGameState = GameState.GameWon;
+                return GameState.GameWon;
             }
             else
             {
-                nextGameState = GameState.StayInState;
+                return GameState.StayInState;
             }
+        }
 
-            return nextGameState;
+        private void EnableUI()
+        {
+            // TODO Code to enable UI
+        }
+
+        private void DisableUI()
+        {
+            // TODO Code to disable UI
+        }
+
+        private void DestroyBomb()
+        {
+            //TODO Code to destroy bomb
         }
     }
 
@@ -116,6 +145,5 @@ namespace PortalDefendersAR.GameStates
         Idle,
         DraggingBomb
     }
-
 
 }

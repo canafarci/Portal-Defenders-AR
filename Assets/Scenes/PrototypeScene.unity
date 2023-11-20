@@ -350,14 +350,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: AR_System_Objects
       objectReference: {fileID: 0}
-    - target: {fileID: 7439423304122619521, guid: 75ee17d50c27a88479a2dbbfe16228f8, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.3251
-      objectReference: {fileID: 0}
-    - target: {fileID: 7439423304122619521, guid: 75ee17d50c27a88479a2dbbfe16228f8, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
