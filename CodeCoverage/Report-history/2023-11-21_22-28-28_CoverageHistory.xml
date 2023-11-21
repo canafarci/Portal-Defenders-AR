@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<coverage version="1.0" date="2023-11-21_22-28-28" tag="">
+  <assembly name="PortalDefendersAR.ARModules">
+    <class name="PortalDefendersAR.ARModules.BombRaycaster" coveredlines="0" coverablelines="10" totallines="23" coveredbranches="0" totalbranches="0" />
+    <class name="PortalDefendersAR.ARModules.DragPlaneRaycaster" coveredlines="0" coverablelines="11" totallines="24" coveredbranches="0" totalbranches="0" />
+    <class name="PortalDefendersAR.ARModules.WorldPoseRaycaster" coveredlines="0" coverablelines="17" totallines="41" coveredbranches="0" totalbranches="0" />
+  </assembly>
+  <assembly name="PortalDefendersAR.Creation">
+    <class name="PortalDefendersAR.Creation.Bomb" coveredlines="9" coverablelines="9" totallines="34" coveredbranches="0" totalbranches="0" />
+    <class name="PortalDefendersAR.Creation.Fortress" coveredlines="6" coverablelines="6" totallines="22" coveredbranches="0" totalbranches="0" />
+    <class name="PortalDefendersAR.Creation.Portal" coveredlines="6" coverablelines="6" totallines="22" coveredbranches="0" totalbranches="0" />
+  </assembly>
+  <assembly name="PortalDefendersAR.GameStates">
+    <class name="PortalDefendersAR.GameStates.BombThrower" coveredlines="21" coverablelines="21" totallines="42" coveredbranches="0" totalbranches="0" />
+    <class name="PortalDefendersAR.GameStates.GameStateMachine" coveredlines="0" coverablelines="31" totallines="76" coveredbranches="0" totalbranches="0" />
+    <class name="PortalDefendersAR.GameStates.PlacingObjectState" coveredlines="32" coverablelines="38" totallines="92" coveredbranches="0" totalbranches="0" />
+    <class name="PortalDefendersAR.GameStates.PlayingState" coveredlines="66" coverablelines="74" totallines="149" coveredbranches="0" totalbranches="0" />
+    <class name="PortalDefendersAR.GameStates.TimeTracker" coveredlines="6" coverablelines="6" totallines="19" coveredbranches="0" totalbranches="0" />
+  </assembly>
+  <assembly name="PortalDefendersAR.Input">
+    <class name="PortalDefendersAR.GameInput.DragInputChecker" coveredlines="0" coverablelines="8" totallines="22" coveredbranches="0" totalbranches="0" />
+    <class name="PortalDefendersAR.GameInput.TouchInputChecker" coveredlines="0" coverablelines="8" totallines="27" coveredbranches="0" totalbranches="0" />
+  </assembly>
+</coverage>

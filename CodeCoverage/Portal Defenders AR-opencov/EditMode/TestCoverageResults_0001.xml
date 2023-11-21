@@ -7,9 +7,11 @@
       <ModuleTime>0001-01-01T00:00:00</ModuleTime>
       <ModuleName>PortalDefendersAR.GameStates</ModuleName>
       <Files>
-        <File uid="1" fullPath="C:/WORK/UNITY/Portal Defenders AR/Assets/Scripts/GameState/GameStateMachine.cs" />
-        <File uid="2" fullPath="C:/WORK/UNITY/Portal Defenders AR/Assets/Scripts/GameState/PlacingObjectState.cs" />
-        <File uid="3" fullPath="C:/WORK/UNITY/Portal Defenders AR/Assets/Scripts/GameState/PlayingState.cs" />
+        <File uid="1" fullPath="C:/WORK/UNITY/Portal Defenders AR/Assets/Scripts/GameState/BombThrower.cs" />
+        <File uid="2" fullPath="C:/WORK/UNITY/Portal Defenders AR/Assets/Scripts/GameState/GameStateMachine.cs" />
+        <File uid="3" fullPath="C:/WORK/UNITY/Portal Defenders AR/Assets/Scripts/GameState/PlacingObjectState.cs" />
+        <File uid="4" fullPath="C:/WORK/UNITY/Portal Defenders AR/Assets/Scripts/GameState/PlayingState.cs" />
+        <File uid="5" fullPath="C:/WORK/UNITY/Portal Defenders AR/Assets/Scripts/GameState/TimeTracker.cs" />
       </Files>
       <Classes>
         <Class>
@@ -18,77 +20,77 @@
           <Methods>
             <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="100.0" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="false" isGetter="false" isSetter="false">
               <Summary numSequencePoints="3" visitedSequencePoints="3" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
-              <MetadataToken>100663300</MetadataToken>
+              <MetadataToken>100663307</MetadataToken>
               <Name>System.Void PortalDefendersAR.GameStates.GameStateMachine::Initialize()</Name>
-              <FileRef uid="1" />
+              <FileRef uid="2" />
               <SequencePoints>
-                <SequencePoint vc="3" uspid="90" ordinal="0" offset="0" sl="23" sc="9" el="23" ec="9" bec="0" bev="0" fileid="1" />
-                <SequencePoint vc="3" uspid="91" ordinal="0" offset="1" sl="24" sc="13" el="24" ec="13" bec="0" bev="0" fileid="1" />
-                <SequencePoint vc="3" uspid="92" ordinal="0" offset="13" sl="25" sc="9" el="25" ec="9" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="3" uspid="769" ordinal="0" offset="0" sl="23" sc="9" el="23" ec="9" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="3" uspid="770" ordinal="0" offset="1" sl="24" sc="13" el="24" ec="13" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="3" uspid="771" ordinal="0" offset="13" sl="25" sc="9" el="25" ec="9" bec="0" bev="0" fileid="2" />
               </SequencePoints>
               <BranchPoints />
             </Method>
             <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="100.0" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="false" isGetter="false" isSetter="false">
               <Summary numSequencePoints="7" visitedSequencePoints="7" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
-              <MetadataToken>100663301</MetadataToken>
+              <MetadataToken>100663308</MetadataToken>
               <Name>System.Void PortalDefendersAR.GameStates.GameStateMachine::Tick()</Name>
-              <FileRef uid="1" />
+              <FileRef uid="2" />
               <SequencePoints>
-                <SequencePoint vc="3" uspid="93" ordinal="0" offset="0" sl="28" sc="9" el="28" ec="9" bec="0" bev="0" fileid="1" />
-                <SequencePoint vc="3" uspid="94" ordinal="0" offset="1" sl="29" sc="13" el="29" ec="13" bec="0" bev="0" fileid="1" />
-                <SequencePoint vc="3" uspid="95" ordinal="0" offset="13" sl="32" sc="13" el="32" ec="13" bec="0" bev="0" fileid="1" />
-                <SequencePoint vc="1" uspid="96" ordinal="0" offset="21" sl="33" sc="13" el="33" ec="13" bec="0" bev="0" fileid="1" />
-                <SequencePoint vc="1" uspid="97" ordinal="0" offset="22" sl="34" sc="17" el="34" ec="17" bec="0" bev="0" fileid="1" />
-                <SequencePoint vc="1" uspid="98" ordinal="0" offset="30" sl="35" sc="13" el="35" ec="13" bec="0" bev="0" fileid="1" />
-                <SequencePoint vc="3" uspid="99" ordinal="0" offset="31" sl="36" sc="9" el="36" ec="9" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="3" uspid="772" ordinal="0" offset="0" sl="28" sc="9" el="28" ec="9" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="3" uspid="773" ordinal="0" offset="1" sl="29" sc="13" el="29" ec="13" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="3" uspid="774" ordinal="0" offset="13" sl="32" sc="13" el="32" ec="13" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="1" uspid="775" ordinal="0" offset="21" sl="33" sc="13" el="33" ec="13" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="1" uspid="776" ordinal="0" offset="22" sl="34" sc="17" el="34" ec="17" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="1" uspid="777" ordinal="0" offset="30" sl="35" sc="13" el="35" ec="13" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="3" uspid="778" ordinal="0" offset="31" sl="36" sc="9" el="36" ec="9" bec="0" bev="0" fileid="2" />
               </SequencePoints>
               <BranchPoints />
             </Method>
             <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="77.78" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="false" isGetter="false" isSetter="false">
               <Summary numSequencePoints="9" visitedSequencePoints="7" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="77.78" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
-              <MetadataToken>100663302</MetadataToken>
+              <MetadataToken>100663309</MetadataToken>
               <Name>System.Void PortalDefendersAR.GameStates.GameStateMachine::ChangeState(PortalDefendersAR.GameStates.GameState)</Name>
-              <FileRef uid="1" />
+              <FileRef uid="2" />
               <SequencePoints>
-                <SequencePoint vc="1" uspid="100" ordinal="0" offset="0" sl="39" sc="9" el="39" ec="9" bec="0" bev="0" fileid="1" />
-                <SequencePoint vc="1" uspid="101" ordinal="0" offset="1" sl="40" sc="13" el="40" ec="13" bec="0" bev="0" fileid="1" />
-                <SequencePoint vc="1" uspid="102" ordinal="0" offset="17" sl="41" sc="13" el="41" ec="13" bec="0" bev="0" fileid="1" />
-                <SequencePoint vc="1" uspid="103" ordinal="0" offset="18" sl="42" sc="17" el="42" ec="17" bec="0" bev="0" fileid="1" />
-                <SequencePoint vc="1" uspid="104" ordinal="0" offset="31" sl="43" sc="17" el="43" ec="17" bec="0" bev="0" fileid="1" />
-                <SequencePoint vc="1" uspid="105" ordinal="0" offset="39" sl="44" sc="13" el="44" ec="13" bec="0" bev="0" fileid="1" />
-                <SequencePoint vc="0" uspid="106" ordinal="0" offset="42" sl="46" sc="13" el="46" ec="13" bec="0" bev="0" fileid="1" />
-                <SequencePoint vc="0" uspid="107" ordinal="0" offset="43" sl="47" sc="17" el="47" ec="17" bec="0" bev="0" fileid="1" />
-                <SequencePoint vc="1" uspid="108" ordinal="0" offset="65" sl="49" sc="9" el="49" ec="9" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="1" uspid="779" ordinal="0" offset="0" sl="39" sc="9" el="39" ec="9" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="1" uspid="780" ordinal="0" offset="1" sl="40" sc="13" el="40" ec="13" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="1" uspid="781" ordinal="0" offset="17" sl="41" sc="13" el="41" ec="13" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="1" uspid="782" ordinal="0" offset="18" sl="42" sc="17" el="42" ec="17" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="1" uspid="783" ordinal="0" offset="31" sl="43" sc="17" el="43" ec="17" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="1" uspid="784" ordinal="0" offset="39" sl="44" sc="13" el="44" ec="13" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="785" ordinal="0" offset="42" sl="46" sc="13" el="46" ec="13" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="786" ordinal="0" offset="43" sl="47" sc="17" el="47" ec="17" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="1" uspid="787" ordinal="0" offset="65" sl="49" sc="9" el="49" ec="9" bec="0" bev="0" fileid="2" />
               </SequencePoints>
               <BranchPoints />
             </Method>
             <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="100.0" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="false" isGetter="false" isSetter="false">
               <Summary numSequencePoints="5" visitedSequencePoints="5" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
-              <MetadataToken>100663303</MetadataToken>
+              <MetadataToken>100663310</MetadataToken>
               <Name>System.Void PortalDefendersAR.GameStates.GameStateMachine::TransitionToNextState(PortalDefendersAR.GameStates.IGameState)</Name>
-              <FileRef uid="1" />
+              <FileRef uid="2" />
               <SequencePoints>
-                <SequencePoint vc="1" uspid="109" ordinal="0" offset="0" sl="52" sc="9" el="52" ec="9" bec="0" bev="0" fileid="1" />
-                <SequencePoint vc="1" uspid="110" ordinal="0" offset="1" sl="53" sc="13" el="53" ec="13" bec="0" bev="0" fileid="1" />
-                <SequencePoint vc="1" uspid="111" ordinal="0" offset="13" sl="54" sc="13" el="54" ec="13" bec="0" bev="0" fileid="1" />
-                <SequencePoint vc="1" uspid="112" ordinal="0" offset="20" sl="55" sc="13" el="55" ec="13" bec="0" bev="0" fileid="1" />
-                <SequencePoint vc="1" uspid="113" ordinal="0" offset="32" sl="56" sc="9" el="56" ec="9" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="1" uspid="788" ordinal="0" offset="0" sl="52" sc="9" el="52" ec="9" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="1" uspid="789" ordinal="0" offset="1" sl="53" sc="13" el="53" ec="13" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="1" uspid="790" ordinal="0" offset="13" sl="54" sc="13" el="54" ec="13" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="1" uspid="791" ordinal="0" offset="20" sl="55" sc="13" el="55" ec="13" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="1" uspid="792" ordinal="0" offset="32" sl="56" sc="9" el="56" ec="9" bec="0" bev="0" fileid="2" />
               </SequencePoints>
               <BranchPoints />
             </Method>
             <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="100.0" branchCoverage="0" crapScore="0" isConstructor="true" isStatic="false" isGetter="false" isSetter="false">
               <Summary numSequencePoints="7" visitedSequencePoints="7" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
-              <MetadataToken>100663299</MetadataToken>
+              <MetadataToken>100663306</MetadataToken>
               <Name>PortalDefendersAR.GameStates.GameStateMachine::GameStateMachine(PortalDefendersAR.GameStates.IGameState, PortalDefendersAR.GameStates.IGameState)</Name>
-              <FileRef uid="1" />
+              <FileRef uid="2" />
               <SequencePoints>
-                <SequencePoint vc="3" uspid="114" ordinal="0" offset="0" sl="11" sc="9" el="11" ec="9" bec="0" bev="0" fileid="1" />
-                <SequencePoint vc="3" uspid="115" ordinal="0" offset="11" sl="14" sc="9" el="14" ec="9" bec="0" bev="0" fileid="1" />
-                <SequencePoint vc="3" uspid="116" ordinal="0" offset="18" sl="16" sc="9" el="16" ec="9" bec="0" bev="0" fileid="1" />
-                <SequencePoint vc="3" uspid="117" ordinal="0" offset="19" sl="17" sc="13" el="17" ec="13" bec="0" bev="0" fileid="1" />
-                <SequencePoint vc="3" uspid="118" ordinal="0" offset="26" sl="18" sc="13" el="18" ec="13" bec="0" bev="0" fileid="1" />
-                <SequencePoint vc="3" uspid="119" ordinal="0" offset="40" sl="19" sc="13" el="19" ec="13" bec="0" bev="0" fileid="1" />
-                <SequencePoint vc="3" uspid="120" ordinal="0" offset="54" sl="20" sc="9" el="20" ec="9" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="3" uspid="793" ordinal="0" offset="0" sl="11" sc="9" el="11" ec="9" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="3" uspid="794" ordinal="0" offset="11" sl="14" sc="9" el="14" ec="9" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="3" uspid="795" ordinal="0" offset="18" sl="16" sc="9" el="16" ec="9" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="3" uspid="796" ordinal="0" offset="19" sl="17" sc="13" el="17" ec="13" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="3" uspid="797" ordinal="0" offset="26" sl="18" sc="13" el="18" ec="13" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="3" uspid="798" ordinal="0" offset="40" sl="19" sc="13" el="19" ec="13" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="3" uspid="799" ordinal="0" offset="54" sl="20" sc="9" el="20" ec="9" bec="0" bev="0" fileid="2" />
               </SequencePoints>
               <BranchPoints />
             </Method>
@@ -100,63 +102,63 @@
           <Methods>
             <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="100.0" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="false" isGetter="false" isSetter="false">
               <Summary numSequencePoints="3" visitedSequencePoints="3" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
-              <MetadataToken>100663308</MetadataToken>
+              <MetadataToken>100663315</MetadataToken>
               <Name>System.Void PortalDefendersAR.GameStates.PlacingObjectState::Enter()</Name>
-              <FileRef uid="2" />
+              <FileRef uid="3" />
               <SequencePoints>
-                <SequencePoint vc="4" uspid="121" ordinal="0" offset="0" sl="29" sc="9" el="29" ec="9" bec="0" bev="0" fileid="2" />
-                <SequencePoint vc="4" uspid="122" ordinal="0" offset="1" sl="30" sc="13" el="30" ec="13" bec="0" bev="0" fileid="2" />
-                <SequencePoint vc="4" uspid="123" ordinal="0" offset="8" sl="31" sc="9" el="31" ec="9" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="4" uspid="800" ordinal="0" offset="0" sl="29" sc="9" el="29" ec="9" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="4" uspid="801" ordinal="0" offset="1" sl="30" sc="13" el="30" ec="13" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="4" uspid="802" ordinal="0" offset="8" sl="31" sc="9" el="31" ec="9" bec="0" bev="0" fileid="3" />
               </SequencePoints>
               <BranchPoints />
             </Method>
             <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="66.67" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="false" isGetter="false" isSetter="false">
               <Summary numSequencePoints="6" visitedSequencePoints="4" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="66.67" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
-              <MetadataToken>100663310</MetadataToken>
+              <MetadataToken>100663317</MetadataToken>
               <Name>PortalDefendersAR.GameStates.GameState PortalDefendersAR.GameStates.PlacingObjectState::Tick()</Name>
-              <FileRef uid="2" />
+              <FileRef uid="3" />
               <SequencePoints>
-                <SequencePoint vc="3" uspid="127" ordinal="0" offset="0" sl="39" sc="9" el="39" ec="9" bec="0" bev="0" fileid="2" />
-                <SequencePoint vc="3" uspid="128" ordinal="0" offset="1" sl="40" sc="13" el="40" ec="13" bec="0" bev="0" fileid="2" />
-                <SequencePoint vc="3" uspid="129" ordinal="0" offset="22" sl="44" sc="21" el="44" ec="21" bec="0" bev="0" fileid="2" />
-                <SequencePoint vc="0" uspid="130" ordinal="0" offset="31" sl="47" sc="21" el="47" ec="21" bec="0" bev="0" fileid="2" />
-                <SequencePoint vc="0" uspid="131" ordinal="0" offset="35" sl="49" sc="21" el="49" ec="21" bec="0" bev="0" fileid="2" />
-                <SequencePoint vc="3" uspid="132" ordinal="0" offset="39" sl="51" sc="9" el="51" ec="9" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="3" uspid="806" ordinal="0" offset="0" sl="39" sc="9" el="39" ec="9" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="3" uspid="807" ordinal="0" offset="1" sl="40" sc="13" el="40" ec="13" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="3" uspid="808" ordinal="0" offset="22" sl="44" sc="21" el="44" ec="21" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="0" uspid="809" ordinal="0" offset="31" sl="47" sc="21" el="47" ec="21" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="0" uspid="810" ordinal="0" offset="35" sl="49" sc="21" el="49" ec="21" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="3" uspid="811" ordinal="0" offset="39" sl="51" sc="9" el="51" ec="9" bec="0" bev="0" fileid="3" />
               </SequencePoints>
               <BranchPoints />
             </Method>
             <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="70.00" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="false" isGetter="false" isSetter="false">
               <Summary numSequencePoints="10" visitedSequencePoints="7" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="70.00" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
-              <MetadataToken>100663311</MetadataToken>
+              <MetadataToken>100663318</MetadataToken>
               <Name>PortalDefendersAR.GameStates.GameState PortalDefendersAR.GameStates.PlacingObjectState::HandlePlacingObject()</Name>
-              <FileRef uid="2" />
+              <FileRef uid="3" />
               <SequencePoints>
-                <SequencePoint vc="3" uspid="133" ordinal="0" offset="0" sl="54" sc="9" el="54" ec="9" bec="0" bev="0" fileid="2" />
-                <SequencePoint vc="3" uspid="134" ordinal="0" offset="1" sl="55" sc="13" el="55" ec="13" bec="0" bev="0" fileid="2" />
-                <SequencePoint vc="2" uspid="135" ordinal="0" offset="21" sl="56" sc="13" el="56" ec="13" bec="0" bev="0" fileid="2" />
-                <SequencePoint vc="2" uspid="136" ordinal="0" offset="22" sl="57" sc="17" el="57" ec="17" bec="0" bev="0" fileid="2" />
-                <SequencePoint vc="1" uspid="137" ordinal="0" offset="26" sl="60" sc="13" el="60" ec="13" bec="0" bev="0" fileid="2" />
-                <SequencePoint vc="0" uspid="138" ordinal="0" offset="52" sl="61" sc="13" el="61" ec="13" bec="0" bev="0" fileid="2" />
-                <SequencePoint vc="0" uspid="139" ordinal="0" offset="53" sl="62" sc="17" el="62" ec="17" bec="0" bev="0" fileid="2" />
-                <SequencePoint vc="0" uspid="140" ordinal="0" offset="61" sl="63" sc="13" el="63" ec="13" bec="0" bev="0" fileid="2" />
-                <SequencePoint vc="1" uspid="141" ordinal="0" offset="62" sl="65" sc="13" el="65" ec="13" bec="0" bev="0" fileid="2" />
-                <SequencePoint vc="3" uspid="142" ordinal="0" offset="66" sl="66" sc="9" el="66" ec="9" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="3" uspid="812" ordinal="0" offset="0" sl="54" sc="9" el="54" ec="9" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="3" uspid="813" ordinal="0" offset="1" sl="55" sc="13" el="55" ec="13" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="2" uspid="814" ordinal="0" offset="21" sl="56" sc="13" el="56" ec="13" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="2" uspid="815" ordinal="0" offset="22" sl="57" sc="17" el="57" ec="17" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="1" uspid="816" ordinal="0" offset="26" sl="60" sc="13" el="60" ec="13" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="0" uspid="817" ordinal="0" offset="52" sl="61" sc="13" el="61" ec="13" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="0" uspid="818" ordinal="0" offset="53" sl="62" sc="17" el="62" ec="17" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="0" uspid="819" ordinal="0" offset="61" sl="63" sc="13" el="63" ec="13" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="1" uspid="820" ordinal="0" offset="62" sl="65" sc="13" el="65" ec="13" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="3" uspid="821" ordinal="0" offset="66" sl="66" sc="9" el="66" ec="9" bec="0" bev="0" fileid="3" />
               </SequencePoints>
               <BranchPoints />
             </Method>
             <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="100.0" branchCoverage="0" crapScore="0" isConstructor="true" isStatic="false" isGetter="false" isSetter="false">
               <Summary numSequencePoints="7" visitedSequencePoints="7" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
-              <MetadataToken>100663307</MetadataToken>
-              <Name>PortalDefendersAR.GameStates.PlacingObjectState::PlacingObjectState(PortalDefendersAR.CoreStructures.Portal/Factory, PortalDefendersAR.CoreStructures.Fortress/Factory, PortalDefendersAR.ARModules.IPoseRaycaster, PortalDefendersAR.GameInput.ITouchInputChecker)</Name>
-              <FileRef uid="2" />
+              <MetadataToken>100663314</MetadataToken>
+              <Name>PortalDefendersAR.GameStates.PlacingObjectState::PlacingObjectState(PortalDefendersAR.Creation.Portal/Factory, PortalDefendersAR.Creation.Fortress/Factory, PortalDefendersAR.ARModules.IPoseRaycaster, PortalDefendersAR.GameInput.ITouchInputChecker)</Name>
+              <FileRef uid="3" />
               <SequencePoints>
-                <SequencePoint vc="4" uspid="152" ordinal="0" offset="0" sl="17" sc="9" el="17" ec="9" bec="0" bev="0" fileid="2" />
-                <SequencePoint vc="4" uspid="153" ordinal="0" offset="7" sl="21" sc="9" el="21" ec="9" bec="0" bev="0" fileid="2" />
-                <SequencePoint vc="4" uspid="154" ordinal="0" offset="8" sl="22" sc="13" el="22" ec="13" bec="0" bev="0" fileid="2" />
-                <SequencePoint vc="4" uspid="155" ordinal="0" offset="15" sl="23" sc="13" el="23" ec="13" bec="0" bev="0" fileid="2" />
-                <SequencePoint vc="4" uspid="156" ordinal="0" offset="22" sl="24" sc="13" el="24" ec="13" bec="0" bev="0" fileid="2" />
-                <SequencePoint vc="4" uspid="157" ordinal="0" offset="29" sl="25" sc="13" el="25" ec="13" bec="0" bev="0" fileid="2" />
-                <SequencePoint vc="4" uspid="158" ordinal="0" offset="37" sl="26" sc="9" el="26" ec="9" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="4" uspid="831" ordinal="0" offset="0" sl="17" sc="9" el="17" ec="9" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="4" uspid="832" ordinal="0" offset="7" sl="21" sc="9" el="21" ec="9" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="4" uspid="833" ordinal="0" offset="8" sl="22" sc="13" el="22" ec="13" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="4" uspid="834" ordinal="0" offset="15" sl="23" sc="13" el="23" ec="13" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="4" uspid="835" ordinal="0" offset="22" sl="24" sc="13" el="24" ec="13" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="4" uspid="836" ordinal="0" offset="29" sl="25" sc="13" el="25" ec="13" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="4" uspid="837" ordinal="0" offset="37" sl="26" sc="9" el="26" ec="9" bec="0" bev="0" fileid="3" />
               </SequencePoints>
               <BranchPoints />
             </Method>

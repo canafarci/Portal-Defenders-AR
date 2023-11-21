@@ -1,31 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <CoverageReport scope="Summary">
   <Summary>
-    <Generatedon>17/11/2023 - 16:06:25</Generatedon>
+    <Generatedon>21/11/2023 - 22:30:15</Generatedon>
     <Parser>MultiReportParser (4x OpenCoverParser)</Parser>
-    <Assemblies>2</Assemblies>
-    <Classes>5</Classes>
-    <Files>5</Files>
-    <Coveredlines>75</Coveredlines>
-    <Uncoveredlines>12</Uncoveredlines>
-    <Coverablelines>87</Coverablelines>
-    <Totallines>237</Totallines>
-    <Linecoverage>86.2</Linecoverage>
+    <Assemblies>4</Assemblies>
+    <Classes>13</Classes>
+    <Files>13</Files>
+    <Coveredlines>177</Coveredlines>
+    <Uncoveredlines>68</Uncoveredlines>
+    <Coverablelines>245</Coverablelines>
+    <Totallines>593</Totallines>
+    <Linecoverage>72.2</Linecoverage>
     <Coveredbranches>0</Coveredbranches>
     <Totalbranches>0</Totalbranches>
-    <Coveredmethods>16</Coveredmethods>
-    <Totalmethods>20</Totalmethods>
-    <Methodcoverage>80</Methodcoverage>
+    <Coveredmethods>38</Coveredmethods>
+    <Totalmethods>48</Totalmethods>
+    <Methodcoverage>79.1</Methodcoverage>
   </Summary>
   <Coverage>
-    <Assembly name="PortalDefendersAR.CoreStructures" classes="2" coverage="100" coveredlines="12" coverablelines="12" totallines="44" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="6" totalmethods="6" methodcoverage="100">
-      <Class name="PortalDefendersAR.CoreStructures.Fortress" coverage="100" coveredlines="6" coverablelines="6" totallines="22" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="3" totalmethods="3" methodcoverage="100" />
-      <Class name="PortalDefendersAR.CoreStructures.Portal" coverage="100" coveredlines="6" coverablelines="6" totallines="22" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="3" totalmethods="3" methodcoverage="100" />
+    <Assembly name="PortalDefendersAR.ARModules" classes="3" coverage="0" coveredlines="0" coverablelines="38" totallines="88" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="4" methodcoverage="0">
+      <Class name="PortalDefendersAR.ARModules.BombRaycaster" coverage="0" coveredlines="0" coverablelines="10" totallines="23" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="1" methodcoverage="0" />
+      <Class name="PortalDefendersAR.ARModules.DragPlaneRaycaster" coverage="0" coveredlines="0" coverablelines="11" totallines="24" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="1" methodcoverage="0" />
+      <Class name="PortalDefendersAR.ARModules.WorldPoseRaycaster" coverage="0" coveredlines="0" coverablelines="17" totallines="41" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="2" methodcoverage="0" />
     </Assembly>
-    <Assembly name="PortalDefendersAR.GameStates" classes="3" coverage="84" coveredlines="63" coverablelines="75" totallines="193" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="10" totalmethods="14" methodcoverage="71.4">
+    <Assembly name="PortalDefendersAR.Creation" classes="3" coverage="100" coveredlines="21" coverablelines="21" totallines="78" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="11" totalmethods="11" methodcoverage="100">
+      <Class name="PortalDefendersAR.Creation.Bomb" coverage="100" coveredlines="9" coverablelines="9" totallines="34" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="5" totalmethods="5" methodcoverage="100" />
+      <Class name="PortalDefendersAR.Creation.Fortress" coverage="100" coveredlines="6" coverablelines="6" totallines="22" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="3" totalmethods="3" methodcoverage="100" />
+      <Class name="PortalDefendersAR.Creation.Portal" coverage="100" coveredlines="6" coverablelines="6" totallines="22" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="3" totalmethods="3" methodcoverage="100" />
+    </Assembly>
+    <Assembly name="PortalDefendersAR.GameStates" classes="5" coverage="91.7" coveredlines="156" coverablelines="170" totallines="378" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="27" totalmethods="31" methodcoverage="87">
+      <Class name="PortalDefendersAR.GameStates.BombThrower" coverage="100" coveredlines="21" coverablelines="21" totallines="42" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="6" totalmethods="6" methodcoverage="100" />
       <Class name="PortalDefendersAR.GameStates.GameStateMachine" coverage="93.5" coveredlines="29" coverablelines="31" totallines="76" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="5" totalmethods="5" methodcoverage="100" />
       <Class name="PortalDefendersAR.GameStates.PlacingObjectState" coverage="89.4" coveredlines="34" coverablelines="38" totallines="92" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="5" totalmethods="6" methodcoverage="83.3" />
-      <Class name="PortalDefendersAR.GameStates.PlayingState" coverage="0" coveredlines="0" coverablelines="6" totallines="25" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="3" methodcoverage="0" />
+      <Class name="PortalDefendersAR.GameStates.PlayingState" coverage="89.1" coveredlines="66" coverablelines="74" totallines="149" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="9" totalmethods="12" methodcoverage="75" />
+      <Class name="PortalDefendersAR.GameStates.TimeTracker" coverage="100" coveredlines="6" coverablelines="6" totallines="19" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="2" totalmethods="2" methodcoverage="100" />
+    </Assembly>
+    <Assembly name="PortalDefendersAR.Input" classes="2" coverage="0" coveredlines="0" coverablelines="16" totallines="49" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="2" methodcoverage="0">
+      <Class name="PortalDefendersAR.GameInput.DragInputChecker" coverage="0" coveredlines="0" coverablelines="8" totallines="22" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="1" methodcoverage="0" />
+      <Class name="PortalDefendersAR.GameInput.TouchInputChecker" coverage="0" coveredlines="0" coverablelines="8" totallines="27" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="1" methodcoverage="0" />
     </Assembly>
   </Coverage>
 </CoverageReport>

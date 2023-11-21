@@ -99,22 +99,156 @@ namespace PortalDefendersAR.Tests.PlayMode
             CommonInstall();
 
             // Simulate game over condition
-            _mockTimeTracker.Setup(t => t.CheckTimeOver(It.IsAny<float>())).Returns(true);
-
             yield return null; // Wait one frame
 
+            SetTimeTrackerLeftTime(_mockTimeTracker.Object);
+            yield return null;
             //Act
             var nextState = _playingState.Tick();
 
             // Assert that the state transitioned to GameOverState
-            Assert.IsTrue(nextState == GameState.GameWon);
+            Assert.AreEqual(nextState, GameState.GameWon);
         }
 
-        private PlayingStates GetPrivateState(PlayingState placingObjectState)
+        [UnityTest]
+        public IEnumerator IdleState_TransitionsTo_DraggingState_OnSuccessfulRaycast()
+        {
+            CommonInstall();
+
+            // Simulate game over condition
+            yield return null; // Wait one frame
+
+            // Arrange
+            var samplePose = new Pose();
+            _mockBombRaycaster.Setup(x => x.TryRaycastValidPose(It.IsAny<Vector2>(), out samplePose))
+                              .Returns(true).Callback<Vector2, Pose>((pos, p) => p = samplePose);
+
+            var sampleTouch = new Touch();
+            _mockTouchInputChecker.Setup(x => x.CheckScreenTouch(out sampleTouch))
+                              .Returns(true).Callback<Touch>((t) => t = sampleTouch);
+
+            // Simulate state transition to DraggingBomb
+            _playingState.Enter();
+            _playingState.Tick();
+
+            var playingState = GetPrivateState(_playingState);
+
+            Assert.AreEqual(playingState, PlayingStates.DraggingBomb);
+        }
+
+        [UnityTest]
+        public IEnumerator DraggingBombState_SetsBombOnBombThrower()
+        {
+            CommonInstall();
+
+            yield return null; // Wait one frame
+
+            // Arrange
+            var samplePose = new Pose();
+            _mockDragPlaneRaycaster.Setup(x => x.TryRaycastValidPose(It.IsAny<Vector2>(), out samplePose))
+                              .Returns(true).Callback<Vector2, Pose>((pos, p) => p = samplePose);
+
+            var sampleTouch = new Touch();
+            _mockDraggingInputChecker.Setup(x => x.CheckScreenTouch(out sampleTouch))
+                              .Returns(true).Callback<Touch>((t) => t = sampleTouch);
+
+            SetPrivateState(_playingState, PlayingStates.DraggingBomb);
+
+            yield return null;
+
+            // Simulate state transition to DraggingBomb
+            _playingState.Enter();
+            _playingState.Tick();
+
+            yield return null;
+            //assert
+            Bomb stateBomb = GetBombFromCurrentState(_playingState);
+            Bomb throwerBomb = GetBombFromThrower(_mockBombThrower.Object);
+
+            Assert.AreEqual(stateBomb, throwerBomb);
+        }
+
+        [UnityTest]
+        public IEnumerator DraggingBombState_ThrowsBombOnReleaseTouch()
+        {
+            // Arrange
+            CommonInstall();
+
+            GameObject camera = new GameObject("cam", typeof(Camera));
+            camera.tag = "MainCamera";
+            yield return null; // Wait one frame
+
+            var samplePose = new Pose();
+            _mockDragPlaneRaycaster.Setup(x => x.TryRaycastValidPose(It.IsAny<Vector2>(), out samplePose))
+                              .Returns(true).Callback<Vector2, Pose>((pos, p) => p = samplePose);
+
+            var sampleTouch = new Touch();
+            _mockDraggingInputChecker.Setup(x => x.CheckScreenTouch(out sampleTouch))
+                              .Returns(true).Callback<Touch>((t) => t = sampleTouch);
+
+            SetPrivateState(_playingState, PlayingStates.DraggingBomb);
+
+            //act
+            yield return null;
+
+            // Simulate state transition to DraggingBomb
+            _playingState.Enter();
+            _playingState.Tick();
+            Bomb firstBomb = GetBombFromCurrentState(_playingState);
+
+            yield return null;
+
+            //simulate release touch
+            _mockDraggingInputChecker.Setup(x => x.CheckScreenTouch(out sampleTouch))
+                  .Returns(false).Callback<Touch>((t) => t = sampleTouch);
+
+            _playingState.Tick();
+            yield return null;
+            //assert
+            Bomb stateBomb = GetBombFromCurrentState(_playingState);
+            Bomb throwerBomb = GetBombFromThrower(_mockBombThrower.Object);
+
+            Assert.IsNull(throwerBomb);
+            Assert.AreNotEqual(stateBomb, firstBomb);
+        }
+
+        private PlayingStates GetPrivateState(PlayingState playingState)
         {
             var currentStateField = typeof(PlayingState)
                 .GetField("_currentPlayingState", BindingFlags.NonPublic | BindingFlags.Instance);
-            return (PlayingStates)currentStateField.GetValue(placingObjectState);
+            return (PlayingStates)currentStateField.GetValue(playingState);
+        }
+
+        private void SetPrivateState(PlayingState playingState, PlayingStates currentPlayingState)
+        {
+            var currentStateField = typeof(PlayingState)
+                .GetField("_currentPlayingState", BindingFlags.NonPublic | BindingFlags.Instance);
+
+            currentStateField.SetValue(playingState, currentPlayingState);
+        }
+
+        private void SetTimeTrackerLeftTime(TimeTracker timeTracker)
+        {
+            var floatField = typeof(TimeTracker)
+                .GetField("_remainingTime", BindingFlags.NonPublic | BindingFlags.Instance);
+
+            floatField.SetValue(timeTracker, -1f);
+        }
+
+        private Bomb GetBombFromCurrentState(PlayingState playingState)
+        {
+            var field = typeof(PlayingState)
+                .GetField("_currentBomb", BindingFlags.NonPublic | BindingFlags.Instance);
+
+            return (Bomb)field.GetValue(playingState);
+        }
+
+        private Bomb GetBombFromThrower(BombThrower bombThrower)
+        {
+            var field = typeof(BombThrower)
+                .GetField("_currentBomb", BindingFlags.NonPublic | BindingFlags.Instance);
+
+            return (Bomb)field.GetValue(bombThrower);
         }
     }
 }

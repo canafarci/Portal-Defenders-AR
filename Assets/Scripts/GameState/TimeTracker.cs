@@ -7,12 +7,12 @@ namespace PortalDefendersAR.GameStates
     public class TimeTracker
     {
         private const float MAX_TIME = 60f;
-        private float _elapsedTime = 0f;
+        private float _remainingTime = MAX_TIME;
 
         public bool CheckTimeOver(float timeDelta)
         {
-            _elapsedTime += timeDelta;
-            bool timeIsOver = _elapsedTime >= MAX_TIME;
+            _remainingTime -= timeDelta;
+            bool timeIsOver = _remainingTime <= 0f;
             return timeIsOver;
         }
     }

@@ -8,7 +8,7 @@ namespace PortalDefendersAR.GameStates
 {
     public class BombThrower : IFixedTickable
     {
-        private Bomb _bomb;
+        private Bomb _currentBomb;
         private Vector3 _targetPos;
         public void DragBomb(Pose pose)
         {
@@ -19,24 +19,24 @@ namespace PortalDefendersAR.GameStates
         {
             if (HasBomb())
             {
-                Transform bombTransform = _bomb.Transform;
+                Transform bombTransform = _currentBomb.Transform;
                 bombTransform.position = Vector3.Lerp(bombTransform.position, _targetPos, 40f * Time.fixedDeltaTime);
             }
         }
 
         public void Throw()
         {
-            _bomb.Transform.parent = null;
-            _bomb.Rigidbody.useGravity = true;
-            _bomb.Rigidbody.isKinematic = false;
-            _bomb.Rigidbody.AddForce(Camera.main.transform.forward * 20f, ForceMode.Impulse);
+            _currentBomb.Transform.parent = null;
+            _currentBomb.Rigidbody.useGravity = true;
+            _currentBomb.Rigidbody.isKinematic = false;
+            _currentBomb.Rigidbody.AddForce(Camera.main.transform.forward * 20f, ForceMode.Impulse);
         }
 
-        public void ClearBomb() => _bomb = null;
+        public void ClearBomb() => _currentBomb = null;
         public void SetBomb(Bomb bomb)
         {
-            _bomb = bomb;
+            _currentBomb = bomb;
         }
-        public bool HasBomb() => _bomb != null;
+        public bool HasBomb() => _currentBomb != null;
     }
 }
